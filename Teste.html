@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Ana Julia</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .painel{
+      margin: auto;
+      background-color: transparent;
+      width: 500px;
+      height: 500px;
+      border-radius: 2px;
+      text-align: center;
+      padding-top: 50px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      margin-bottom: 300px;
+      
+    }
+    .sim{
+    height: 70px;
+    width: 90px;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    margin-left: -100px;
+  }
+
+    #nao{
+      position: absolute;
+      height: 70px;
+    width: 90px;
+    background-color: black;
+    border: 2px solid white; /* Adicione esta linha */
+    border-radius: 10px;
+    color: white;
+    margin-left: 40px;
+    }
+ 
+  </style>
+
+  
+</head>
+<body>
+    
+  <button id="botao" class="botao-principal" onclick="mostrarConteudo()">💗</button>
+
+  
+
+  <div id="conteudo">
+    
+
+
+    <div class="painel">
+      <h1 class="texto1">Ana Julia Guilhoto</h1>
+      <h2 class="texto2">Aceita namorar comigo?</h2>
+     <div class="heart"></div>
+      <button class="sim">Sim</button>
+      <button onclick="fuja()" id="nao">Não</button>
+      <br>
+      <br>
+      <br>
+      <h3 id="meuH3" class="oculto">Te amo mozi💘</h3>
+      <br>
+      <img id=minha src="beijo.jpeg" alt="" class="oculto">
+
+        
+    </div>
+
+    
+    
+      
+
+    <!-- Player de Música estilo Spotify -->
+    <div class="player">
+      <img src="capa.png" alt="Capa do Álbum" class="album"/>
+      <div class="info">
+        <h4>her</h4>
+        <p>JVKE</p>
+      </div>
+      <div class="controls">
+        <button id="prevBtn">⏮</button>
+        <button id="playPause" onclick="togglePlayPause()">▶️</button>
+        <button id="nextBtn">⏭</button>
+      </div>
+    </div>
+
+    <audio id="audio" src="audio.mp3"></audio>
+    <div class="progress-container">
+      <span id="currentTime">0:00</span>
+      <input type="range" id="progressBar" value="0" max="100">
+      <span id="duration">0:00</span>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
