@@ -172,15 +172,26 @@ h2{
       }
       
       .visivel {
-        display: inline-block; /* Ou qualquer outro valor de display que você queira */
+        display: inline-block; 
       }
 
-      #minha{
+      #teste{
         width: 200px;
         height: 200px;
         border-radius: 8px;
       
       }
   
-   
+      #container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    h4{
+        color: #e91e63; /* Cor temática de amor */
+        margin-bottom: 20px;
+    }
+    
 }

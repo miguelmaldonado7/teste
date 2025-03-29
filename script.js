@@ -105,7 +105,10 @@ botaoConfeti.addEventListener('click', function() {
 document.addEventListener('DOMContentLoaded', function() {
   const botao = document.querySelector('.sim'); // Corrigido o seletor
   const meuH3 = document.getElementById('meuH3');
-  const minhaimg = document.getElementById('minha')
+  const minhaimg = document.getElementById('teste')
+  const meuH4 = document.getElementById('meuH4')
+  const contagem = document.getElementById('tempoApaixonado')
+  const container = document.getElementById('container')
 
   botao.addEventListener('click', function() {
     if (meuH3) {
@@ -113,6 +116,50 @@ document.addEventListener('DOMContentLoaded', function() {
       meuH3.classList.add('visivel');
       minhaimg.classList.remove('oculto');
       minhaimg.classList.add('visivel');
+      meuH4.classList.remove('oculto');
+      meuH4.classList.add('visivel');
+      contagem.classList.remove('oculto');
+      contagem.classList.add('visivel');
+      container.classList.remove('oculto');
+      container.classList.add('visivel');
+
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const dataInicio = new Date('2024-12-04T14:42:00');
+  const mesesElement = document.getElementById('meses');
+  const diasElement = document.getElementById('dias');
+  const horasElement = document.getElementById('horas');
+  const segundosElement = document.getElementById('segundos');
+
+  function atualizarContagem() {
+      const agora = new Date();
+      const diferencaEmMilissegundos = agora.getTime() - dataInicio.getTime();
+
+      // Cálculos
+      const segundosTotais = Math.floor(diferencaEmMilissegundos / 1000);
+      const minutosTotais = Math.floor(segundosTotais / 60);
+      const horasTotais = Math.floor(minutosTotais / 60);
+      const diasTotais = Math.floor(horasTotais / 24);
+
+      const anos = Math.floor(diasTotais / 365.25); // Considera anos bissextos de forma aproximada
+      const meses = Math.floor((diasTotais % 365.25) / 30.44); // Considera meses com média de dias
+      const dias = Math.floor((diasTotais % 365.25) % 30.44);
+      const horas = horasTotais % 24;
+      const minutos = minutosTotais % 60;
+      const segundos = segundosTotais % 60;
+
+      mesesElement.textContent = `${anos * 12 + meses} meses`;
+      diasElement.textContent = `${dias} dias`;
+      horasElement.textContent = `${horas} horas`;
+      segundosElement.textContent = `${segundos} segundos`;
+  }
+
+  // Atualiza a contagem a cada segundo
+  setInterval(atualizarContagem, 1000);
+
+  // Chama a função uma vez para exibir os valores iniciais (evita um breve "0" antes da primeira atualização)
+  atualizarContagem();
+}); 
